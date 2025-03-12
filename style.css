@@ -23,7 +23,16 @@ body{
     border: 2px solid rgba(255, 255, 255, .2);
     border-radius: 30px;
     backdrop-filter: blur(30px);
+    transform: scale(0);
+    animation: zoom-in 1s ease forwards;
 }
+@keyframes zoom-in{
+100%{
+    transform: scale(1);
+}
+}
+    
+
 header {
  position: absolute;
  top: 0;
@@ -36,11 +45,23 @@ header {
  z-index:100;
  
 }
+@keyframes slide-in{
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 .logo{
     font-size:25px;
     font-weight:600;
     color:#fff;
     text-decoration: none;
+}
+.animated{ 
+    transform: translateY(30px);
+    opacity: 0;
+    animation: slide-in 1s ease forwards;
+    animation-delay: 1s;
 }
 .navbar a{
     text-decoration: none;
@@ -63,6 +84,7 @@ header {
     gap: 58px;
     padding: 50px 5% 0;
     color: #fff;
+    animation-delay: 1.6s;
 }
 .home-detail h1{
     font-size:35px;
@@ -117,8 +139,8 @@ header {
 }
 .home-img .img-box{
     position: relative;
-    width: 21vw;
-    height: 21vw;
+    width: 19vw;
+    height: 19vw;
     border: 2px solid #fff;
     border-radius: 50%;
     box-shadow: 0 0 20px #fff;
@@ -131,4 +153,3 @@ header {
     width: 100%;
     object-fit: cover;
 }
-
